@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { getById } from './lib.js';
+import { getById, findIndex } from './lib.js';
 
 var data = {
 	"active_id": 0,
@@ -29,7 +29,6 @@ function repaint()
 
 class List extends React.Component
 {
-	
 	render()
 	{
 		return <div className='list'>
@@ -71,16 +70,27 @@ class Form extends React.Component
 		return <div className='form'>
 			<div className='form_row'>
 				<label>Name</label>
-				<input name='name' defaultValue={ item.name } />
+				<input name='name' value={ item.name }
+					onChange={ (e) => { this.onChange(e) } }
+				/>
 			</div>
 		</div>;
+	}
+	
+	
+	onChange(e)
+	{
+		var index = findIndex(this.props.data.list, this.props.data.active_id);
+		var item = this.props.data.list[index];
+		item.name = e.target.value;
+		repaint();
 	}
 }
 
 
 
 class App extends React.Component
-{
+{	
 	render()
 	{
 		return <>

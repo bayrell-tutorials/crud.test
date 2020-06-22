@@ -1,7 +1,0 @@
-{
-	"require": {
-		"twig/twig": "^2.0",
-		"elberos/core": "1.1.4",
-		"elberos/orm_mysql": "1.1.4"
-	}
-}

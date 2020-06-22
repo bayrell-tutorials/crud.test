@@ -1,0 +1,9 @@
+{
+  "name": "hello-world",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "parcel build src/index.html --public-url /vuejs --out-dir ../web/vuejs --cache-dir var/parcel",
+    "watch": "parcel watch src/index.html --public-url /vuejs --out-dir ../web/vuejs --cache-dir var/parcel"
+  }
+}

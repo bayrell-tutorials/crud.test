@@ -44,11 +44,8 @@ body{ margin:0; padding:0; }
 
 <template>
 	<div class="app">
-		<List
-			v-bind:active_id="active_id"
-			v-bind:list="list"
-		/>
-		<Form />
+		<List></List>
+		<Form></Form>
 	</div>
 </template>
 
@@ -64,26 +61,6 @@ export default
 	{
 		"Form": Form,
 		"List": List,
-	},
-	data: function()
-	{
-		return {
-			"active_id": 0,
-			"list": [
-				{
-					"id": 1,
-					"name": "Name 1",
-				},
-				{
-					"id": 2,
-					"name": "Name 2",
-				},
-				{
-					"id": 3,
-					"name": "Name 3",
-				},
-			],
-		};
 	},
 }
 </script>

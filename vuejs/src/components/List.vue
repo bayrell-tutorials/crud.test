@@ -12,12 +12,22 @@
 <script>
 export default
 {
-	props: ["active_id", "list"],
+	computed:
+	{
+		active_id ()
+		{
+			return this.$store.state.active_id;
+		},
+		list ()
+		{
+			return this.$store.state.list;
+		}
+	},
 	methods:
 	{
 		select: function (id)
 		{
-			this.active_id = id;
+			this.$store.commit('select', id);
 		},
 	}
 }
